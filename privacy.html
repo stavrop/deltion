@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deltion — Privacy Statement</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    color: #1c1c1e; background: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e5e5ea; background: #1c1c1e; } a { color: #6ab0ff; } }
+  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2rem; border-bottom: 1px solid rgba(128,128,128,0.25); padding-bottom: 0.3rem; }
+  .updated { color: #8e8e93; font-size: 0.9rem; }
+  a { color: #007aff; }
+  code { background: rgba(128,128,128,0.15); padding: 0.1rem 0.35rem; border-radius: 4px; }
+  ul { padding-left: 1.25rem; }
+  .note { background: rgba(255,149,0,0.12); border-left: 4px solid #ff9500; padding: 0.75rem 1rem; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <h1>Deltion — Privacy Statement</h1>
+  <p class="updated">Last updated: 1 September 2026</p>
+
+  <p>
+    Deltion is a personal medical-records app for iPhone, iPad and Mac. It is private by
+    default: there is no account to create, no sign-in, and <strong>no server of ours</strong>
+    — not because your data is protected on it, but because it does not exist. Your documents
+    and everything read out of them are stored on your device.
+  </p>
+  <p>
+    We never collect, receive or store your medical data. There is no analytics, no tracking,
+    no advertising, and no data sold or shared with anyone. Three things can leave your device,
+    <strong>all of them optional and all of them started by you</strong>: cloud AI analysis if
+    you add your own provider key, iCloud sync if you turn it on, and a bug report if you send
+    one. Each is described below. If you use none of them, nothing your device holds ever
+    leaves it.
+  </p>
+
+  <h2>What Deltion stores, and where</h2>
+  <ul>
+    <li><strong>Your documents and health data</strong> (PDFs, photos, extracted
+      measurements, summaries, reminders) are stored on your device. If you turn on iCloud
+      sync they are also stored in your own iCloud account — see below.</li>
+    <li>Files are <strong>encrypted at rest</strong> using AES-256-GCM, and protected with
+      iOS file protection (<code>NSFileProtectionComplete</code>) so they are inaccessible
+      while the device is locked.</li>
+    <li>Encryption keys and any AI provider API keys you enter are stored in the
+      device <strong>Keychain</strong> and never leave the device.</li>
+    <li>There is <strong>no analytics, advertising, or tracking</strong> of any kind.</li>
+  </ul>
+
+  <h2>AI analysis</h2>
+  <p>
+    <strong>By default, analysis runs on your device</strong> using Apple's built-in
+    on-device model, on hardware that supports it. Nothing is uploaded, nothing is sent to us
+    or to anyone else, and there is nothing to pay. This is what happens unless you
+    deliberately change it.
+  </p>
+  <p>
+    You may instead supply your own API key for a cloud provider (Anthropic Claude, OpenAI
+    GPT-4 or Google Gemini). If you do, the extracted <em>text</em> of a document you choose
+    to analyse is sent <strong>directly from your device to that provider</strong>, under your
+    own account with them and their privacy policy. It is not routed through any server of
+    ours, because there isn't one. Your API key is held in the device Keychain and is never
+    transmitted anywhere except to the provider it belongs to.
+  </p>
+
+  <h2>iCloud sync (optional, Pro)</h2>
+  <p>
+    If you turn on iCloud sync, your library is synchronised through <strong>your own iCloud
+    account</strong> so it appears on your other devices. It is stored in a CloudKit
+    <em>private database</em>, which is part of your Apple Account: only your devices, signed
+    in as you, can read it. <strong>We have no access to it whatsoever</strong> — a private
+    database is not visible to the app's developer, and there is no administrative view of it
+    for us to look at. Apple handles that storage under
+    <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. No third party
+    other than Apple is involved, and sync is off unless you switch it on.
+  </p>
+
+  <h2>Apple Health</h2>
+  <p>
+    If you enable Apple Health sync, Deltion reads and writes health samples through Apple's
+    HealthKit on your device, with your explicit permission per data type. This data stays
+    within Apple Health on your device and is not transmitted to us.
+  </p>
+
+  <h2>Bug reports and feature requests</h2>
+  <p>
+    If you use the in-app "Report a Bug or Request a Feature" form, the information you type
+    (an optional name, the type of request, and your description) plus the app version is
+    submitted to our <strong>public issue tracker on GitHub</strong> so we can act on it.
+  </p>
+  <p class="note">
+    Because issues are public, please do <strong>not</strong> include sensitive personal or
+    medical information in a bug report or feature request.
+  </p>
+
+  <h2>Data sharing</h2>
+  <p>
+    We do not sell, rent or share your data, and we have no mechanism by which we could:
+    nothing about your library reaches us. The only outbound transfers are the three you
+    control — optional cloud AI analysis (to the provider whose key you supplied), optional
+    iCloud sync (to your own Apple Account), and feedback you choose to submit. Analysis on
+    the device, which is the default, transfers nothing at all.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    Deltion is not directed at children and does not knowingly collect information from
+    children.
+  </p>
+
+  <h2>Changes to this statement</h2>
+  <p>
+    We may update this statement as the app evolves. Material changes will be reflected here
+    with a new "last updated" date.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions or privacy concerns can be raised on our
+    <a href="https://github.com/stavrop/deltion/issues">GitHub issue tracker</a>.
+  </p>
+
+  <h2>Medical disclaimer</h2>
+  <p>
+    Deltion does not provide medical advice and does not replace your doctor. Always consult
+    a qualified healthcare professional for medical decisions.
+  </p>
+</body>
+</html>

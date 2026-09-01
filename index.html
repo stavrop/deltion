@@ -3,103 +3,221 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Deltion — Privacy Statement</title>
+<title>Deltion — your medical records, read on device</title>
+<meta name="description" content="Deltion turns lab reports, scans and discharge letters into something you can read: measurements extracted, explained in plain language, and tracked over time. No account, no server, analysis on your device by default.">
+<link rel="icon" href="img/icon.png">
+<meta property="og:title" content="Deltion — your medical records, read on device">
+<meta property="og:description" content="Lab reports, scans and letters, extracted and explained. No account, no server, on-device analysis by default.">
+<meta property="og:image" content="https://stavrop.github.io/deltion/img/icon.png">
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 4rem;
-    color: #1c1c1e; background: #ffffff;
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff; --fg: #1c1c1e; --muted: #6b6b70; --accent: #007aff;
+    --card: #f6f6f8; --line: rgba(120,120,128,0.22);
   }
-  @media (prefers-color-scheme: dark) { body { color: #e5e5ea; background: #1c1c1e; } a { color: #6ab0ff; } }
-  h1 { font-size: 1.9rem; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.25rem; margin-top: 2rem; border-bottom: 1px solid rgba(128,128,128,0.25); padding-bottom: 0.3rem; }
-  .updated { color: #8e8e93; font-size: 0.9rem; }
-  a { color: #007aff; }
-  code { background: rgba(128,128,128,0.15); padding: 0.1rem 0.35rem; border-radius: 4px; }
-  ul { padding-left: 1.25rem; }
-  .note { background: rgba(255,149,0,0.12); border-left: 4px solid #ff9500; padding: 0.75rem 1rem; border-radius: 6px; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #131315; --fg: #e9e9ec; --muted: #9a9aa2; --accent: #4c9bff;
+            --card: #1d1d20; --line: rgba(140,140,150,0.22); }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg); line-height: 1.65;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 0 1.25rem; }
+  a { color: var(--accent); }
+
+  header { padding: 4.5rem 0 3rem; text-align: center; }
+  header img.icon { width: 108px; height: 108px; border-radius: 24px; display: block; margin: 0 auto 1.5rem; }
+  h1 { font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.15; margin: 0 0 .75rem; letter-spacing: -0.02em; }
+  .tagline { font-size: clamp(1.05rem, 2.4vw, 1.25rem); color: var(--muted); max-width: 34rem; margin: 0 auto; }
+  .platforms { margin-top: 1.75rem; color: var(--muted); font-size: .95rem; }
+
+  section { padding: 3rem 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.5rem; letter-spacing: -0.01em; margin: 0 0 1rem; }
+  h3 { font-size: 1.05rem; margin: 0 0 .35rem; }
+  p { margin: 0 0 1rem; }
+  .lede { font-size: 1.1rem; }
+
+  .grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card { background: var(--card); border-radius: 14px; padding: 1.25rem 1.35rem; }
+  .card p { color: var(--muted); margin: 0; font-size: .96rem; }
+  .pro {
+    display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+    border-radius: 5px; padding: .05rem .35rem; vertical-align: middle; margin-left: .4rem;
+  }
+
+  .shots { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .shots img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); display: block; }
+  figure { margin: 0; }
+  figcaption { color: var(--muted); font-size: .85rem; margin-top: .5rem; text-align: center; }
+  .wide img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; }
+
+  .privacy-points { list-style: none; padding: 0; margin: 0; }
+  .privacy-points li { padding: .55rem 0 .55rem 1.6rem; position: relative; }
+  .privacy-points li::before {
+    content: ""; position: absolute; left: 0; top: 1.15rem;
+    width: .5rem; height: .5rem; border-radius: 50%; background: var(--accent);
+  }
+  .caveat { color: var(--muted); font-size: .95rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 2.5rem 0 4rem; color: var(--muted); font-size: .92rem; }
+  footer a { margin-right: 1.25rem; }
+  .disclaimer { margin-top: 1.5rem; font-size: .88rem; }
 </style>
 </head>
 <body>
-  <h1>Deltion — Privacy Statement</h1>
-  <p class="updated">Last updated: 25 June 2026</p>
 
-  <p>
-    Deltion is a personal medical-records app for iPhone and iPad. It is designed to be
-    private by default: your medical documents and the data extracted from them stay
-    <strong>on your device</strong>. We — the developers of Deltion — do not operate any
-    server, do not have a user account system, and <strong>cannot see your data</strong>.
+<header class="wrap">
+  <img class="icon" src="img/icon.png" alt="Deltion app icon">
+  <h1>Your medical records,<br>read on device</h1>
+  <p class="tagline">
+    Deltion turns the pile of lab reports, scans and discharge letters you accumulate
+    into something you can actually read.
   </p>
+  <p class="platforms">iPhone · iPad · Mac — one purchase covers all three</p>
+</header>
 
-  <h2>What Deltion stores, and where</h2>
-  <ul>
-    <li><strong>Your documents and health data</strong> (PDFs, photos, extracted
-      measurements, summaries, reminders) are stored only on your device.</li>
-    <li>Files are <strong>encrypted at rest</strong> using AES-256-GCM, and protected with
-      iOS file protection (<code>NSFileProtectionComplete</code>) so they are inaccessible
-      while the device is locked.</li>
-    <li>Encryption keys and any AI provider API keys you enter are stored in the
-      device <strong>Keychain</strong> and never leave the device.</li>
-    <li>There is <strong>no analytics, advertising, or tracking</strong> of any kind.</li>
+<main>
+
+<section class="wrap">
+  <h2>What it does</h2>
+  <p class="lede">
+    Point it at a PDF or a photo of a report. Deltion pulls out the measurements, explains
+    them in plain language, and keeps them in order — so “your ferritin is 18” stops being a
+    number on a page and becomes a line you can watch over three years.
+  </p>
+  <div class="shots">
+    <figure><img src="img/iphone-dashboard.png" alt="Deltion dashboard showing a health-status ring and recent documents"><figcaption>At a glance</figcaption></figure>
+    <figure><img src="img/iphone-documents.png" alt="The document library, grouped by category"><figcaption>Your whole library</figcaption></figure>
+    <figure><img src="img/iphone-trends.png" alt="A biomarker charted over time against its typical range"><figcaption>Trends over time</figcaption></figure>
+    <figure><img src="img/iphone-compare.png" alt="Two reports compared side by side, values marked as changed"><figcaption>Two visits, compared</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Built for people who keep everything</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>The library is free</h3>
+      <p>Unlimited documents, no cap and no subscription to store them. Nothing pushes you to
+         throw away last year’s bloods to make room.</p>
+    </div>
+    <div class="card">
+      <h3>Analysis on your device</h3>
+      <p>By default Deltion reads your documents using Apple’s on-device model. Nothing is
+         uploaded, and there is nothing to pay. A cloud model is available if you add your own
+         API key — your choice, not the default.</p>
+    </div>
+    <div class="card">
+      <h3>Trends and reference ranges</h3>
+      <p>Measurements are charted over time against typical adult ranges. Where a report states
+         its own range, that one wins — and the app says which is which.</p>
+    </div>
+    <div class="card">
+      <h3>Compare two visits <span class="pro">Pro</span></h3>
+      <p>Put two reports side by side and see what moved, by how much, and in which direction.</p>
+    </div>
+    <div class="card">
+      <h3>Everyone in the family</h3>
+      <p>Separate profiles for the people whose records you keep. Deleting a profile never
+         deletes their documents — they move, they don’t disappear.</p>
+    </div>
+    <div class="card">
+      <h3>Scans you can carry <span class="pro">Pro</span></h3>
+      <p>Import a DICOM study and keep a readable preview of the series with you. It is a way to
+         carry and read your scans — <em>not</em> a radiology workstation: no windowing,
+         no measurement tools.</p>
+    </div>
+    <div class="card">
+      <h3>Reports for your doctor <span class="pro">Pro</span></h3>
+      <p>Export a clean PDF summary of a period, a category, or a set of measurements, to hand
+         over at an appointment.</p>
+    </div>
+    <div class="card">
+      <h3>Sync across your devices <span class="pro">Pro</span></h3>
+      <p>Through your own iCloud account, in a private database only your devices can read.
+         Off unless you turn it on.</p>
+    </div>
+    <div class="card">
+      <h3>Apple Health, both ways</h3>
+      <p>Pull in the readings Health already holds, and send measurements Deltion extracts back
+         to it, with per-type permission. Free.</p>
+    </div>
+    <div class="card">
+      <h3>Import from your provider <span class="pro">Pro</span></h3>
+      <p>Clinical records from the Health app, or a FHIR export from a patient portal — lab
+         values land as documents, one per visit day, so trends and comparison still work.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>On a bigger screen</h2>
+  <div class="wide">
+    <img src="img/mac-dashboard.png" alt="Deltion on the Mac, showing the two-column layout with a document open beside the library">
+  </div>
+  <p class="caveat" style="margin-top:1rem">
+    iPad and Mac get the two-column layout, so a document stays open beside the library.
+    Importing a whole DICOM study is iPad and Mac only — a phone is not the place to hand over
+    a two-gigabyte folder.
+  </p>
+</section>
+
+<section class="wrap">
+  <h2>Eight languages, and legible at any text size</h2>
+  <p>
+    Deltion is available in English, Spanish, French, German, Japanese, Italian, Brazilian
+    Portuguese and Greek. Clinical vocabulary — biomarker names, units, and whether a value is
+    in range — deliberately stays in English, because that is how it appears on the reports
+    you are reading, and a summary that disagreed with the tile beside it would be worse than
+    one that didn’t translate at all.
+  </p>
+  <p>
+    The interface holds together at the largest accessibility text sizes rather than clipping,
+    and every control is labelled for VoiceOver.
+  </p>
+</section>
+
+<section class="wrap">
+  <h2>Privacy, stated plainly</h2>
+  <ul class="privacy-points">
+    <li><strong>There is no account and no server of ours.</strong> Not “your data is safe on
+      our servers” — there are no servers. Nothing to breach, nothing to subpoena, nothing for
+      us to look at.</li>
+    <li><strong>We never collect or store your medical data.</strong> No analytics, no
+      tracking, no advertising, nothing sold or shared. There is no mechanism by which your
+      library could reach us.</li>
+    <li><strong>Your documents are encrypted on the device</strong> with AES-256-GCM and iOS
+      file protection, so they are unreadable while the device is locked. Keys live in the
+      Keychain.</li>
+    <li><strong>Analysis runs on your device by default</strong>, on Apple’s on-device model.
+      In that mode nothing leaves at all.</li>
+    <li><strong>iCloud sync uses your own iCloud account</strong>, in a private CloudKit
+      database that only your signed-in devices can read. There is no developer view of it.</li>
   </ul>
+  <p class="caveat" style="margin-top:1.25rem">
+    Three things can leave your device, and you start all three: cloud AI analysis, if you
+    choose to add your own provider key — then that document’s text goes straight from your
+    device to that provider, under your account with them; iCloud sync, if you switch it on;
+    and a bug report, if you send one. Use none of them and nothing ever leaves.
+    The <a href="privacy.html">full privacy statement</a> spells each out.
+  </p>
+</section>
 
-  <h2>AI analysis (optional)</h2>
-  <p>
-    If you choose to analyse a document, the extracted <em>text</em> of that document is
-    sent directly from your device to the AI provider <strong>you select and configure</strong>
-    (Anthropic Claude, OpenAI GPT-4, or Google Gemini) using your own API key. This is the
-    only circumstance in which document content leaves your device, and it happens only when
-    you initiate an analysis. That data is then handled under the privacy policy of the
-    provider you chose. Deltion does not route this through any server of ours.
-  </p>
+</main>
 
-  <h2>Apple Health</h2>
-  <p>
-    If you enable Apple Health sync, Deltion reads and writes health samples through Apple's
-    HealthKit on your device, with your explicit permission per data type. This data stays
-    within Apple Health on your device and is not transmitted to us.
+<footer class="wrap">
+  <a href="privacy.html">Privacy statement</a>
+  <a href="https://github.com/stavrop/deltion/issues">Support &amp; feedback</a>
+  <p class="disclaimer">
+    Deltion does not provide medical advice and does not replace your doctor. Reference ranges
+    shown are published adult typicals, not your laboratory’s, and the app marks them as such.
+    Always consult a qualified healthcare professional for medical decisions.
   </p>
+</footer>
 
-  <h2>Bug reports and feature requests</h2>
-  <p>
-    If you use the in-app "Report a Bug or Request a Feature" form, the information you type
-    (an optional name, the type of request, and your description) plus the app version is
-    submitted to our <strong>public issue tracker on GitHub</strong> so we can act on it.
-  </p>
-  <p class="note">
-    Because issues are public, please do <strong>not</strong> include sensitive personal or
-    medical information in a bug report or feature request.
-  </p>
-
-  <h2>Data sharing</h2>
-  <p>
-    We do not sell, rent, or share your data. The only outbound transfers are the two you
-    control: optional AI analysis (to your chosen provider) and feedback you choose to submit.
-  </p>
-
-  <h2>Children</h2>
-  <p>
-    Deltion is not directed at children and does not knowingly collect information from
-    children.
-  </p>
-
-  <h2>Changes to this statement</h2>
-  <p>
-    We may update this statement as the app evolves. Material changes will be reflected here
-    with a new "last updated" date.
-  </p>
-
-  <h2>Contact</h2>
-  <p>
-    Questions or privacy concerns can be raised on our
-    <a href="https://github.com/stavrop/deltion/issues">GitHub issue tracker</a>.
-  </p>
-
-  <h2>Medical disclaimer</h2>
-  <p>
-    Deltion does not provide medical advice and does not replace your doctor. Always consult
-    a qualified healthcare professional for medical decisions.
-  </p>
 </body>
 </html>
