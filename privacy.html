@@ -80,6 +80,17 @@
     <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. No third party
     other than Apple is involved, and sync is off unless you switch it on.
   </p>
+  <p>
+    Two different protections apply, and it is worth being precise about which is which.
+    <strong>The document files themselves are sealed on your device before they sync</strong>,
+    with the same AES-256-GCM key described above; that key travels between your devices in a
+    CloudKit end-to-end encrypted field, so Apple stores the files as ciphertext it cannot
+    read. <strong>The details Deltion reads out of those documents</strong> — titles,
+    summaries, measurement values, dates — sync as ordinary records in your private database.
+    Those are protected by your Apple Account and by Apple's encryption in transit and at
+    rest, but they are not sealed with the app's own key, so we describe them as private to
+    your account rather than end-to-end encrypted.
+  </p>
 
   <h2>Apple Health</h2>
   <p>
